@@ -53,12 +53,10 @@ fun Welcome(
             is UserState.Success -> {
                 if (userState.message.contains("is logged in")) {
                     navigated.value = true
-                    navController.navigate("profile") {
+                    navController.navigate("home") {
                         popUpTo("welcome") { inclusive = true }
                         launchSingleTop = true
                     }
-                } else if (userState.message.contains("Login") || userState.message.contains("Sign Up")) {
-                    // successful explicit auth elsewhere; ignore here
                 } else {
                     navController.navigate("login")
                 }
@@ -67,7 +65,7 @@ fun Welcome(
                 navigated.value = true
                 navController.navigate("login")
             }
-            UserState.Loading -> { /* no-op */ }
+            UserState.Loading -> {  }
         }
     }
 

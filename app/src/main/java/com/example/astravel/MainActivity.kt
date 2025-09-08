@@ -38,7 +38,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AstravelTheme {
-                Bandarban()
+                NavigationComponent()
             }
         }
     }
@@ -56,5 +56,6 @@ fun NavigationComponent() {
         composable("home") { Home(navController, authViewModel) }
         composable("favourites") { Favourites(navController, authViewModel) }
         composable("profile") { Profile(navController, authViewModel) }
+        composable("bandarban") { Bandarban(navController, authViewModel) }
     }
 }

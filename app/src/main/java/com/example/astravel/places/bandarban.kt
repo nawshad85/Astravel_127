@@ -3,8 +3,10 @@ package com.example.astravel.places
 import android.R
 import android.R.attr.bottom
 import android.graphics.drawable.shapes.RoundRectShape
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
@@ -12,6 +14,7 @@ import androidx.compose.foundation.layout.Arrangement.Bottom
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -24,6 +27,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Divider
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -39,18 +44,25 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
+import com.example.astravel.SupabaseAuthViewModel
 import com.example.astravel.ui.theme.Poppins
 import com.example.astravel.ui.theme.PoppinsLight
 
 @Composable
-fun Bandarban(onBack: () -> Unit = {}) { // added onBack parameter with default
+fun Bandarban(
+    navController: NavHostController,
+    authViewModel: SupabaseAuthViewModel
+) { // added onBack parameter with default
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(color = Color(0xFF031E2A))
+            .padding(bottom = 30.dp)
     ){
         Column(
 
@@ -75,12 +87,12 @@ fun Bandarban(onBack: () -> Unit = {}) { // added onBack parameter with default
                     contentDescription = "Back",
                     tint = Color.White,
                     modifier = Modifier
-                        .padding(start = 20.dp, top = 20.dp) // slightly inset inside outer padding
+                        .padding(start = 20.dp, top = 20.dp)
                         .size(36.dp)
                         .background(Color(0x55000000), RoundedCornerShape(10.dp))
                         .padding(6.dp)
-                        .clickable { onBack() }
                         .align(Alignment.TopStart)
+                        .clickable { navController.popBackStack() }
                 )
                 Row(
                     modifier = Modifier
@@ -232,8 +244,51 @@ fun Bandarban(onBack: () -> Unit = {}) { // added onBack parameter with default
                     fontFamily = PoppinsLight,
                     fontSize = 16.sp,
                     color = Color.White,
-                    modifier = Modifier.padding(start = 30.dp, end = 30.dp, bottom = 20.dp)
+                    modifier = Modifier.padding(start = 30.dp, end = 30.dp)
                 )
+                Row(
+                    modifier = Modifier.padding(start = 30.dp, end = 30.dp).align(Alignment.CenterHorizontally),
+                ) {
+                    Button(
+                        onClick = {},
+                        modifier = Modifier
+                            .width(140.dp)
+                            .height(50.dp)
+                            .clip(RoundedCornerShape(20.dp))
+                            .border(width = 1.dp, color = Color(0xFF5EDFFF), shape = RoundedCornerShape(20.dp)),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF031E2A))
+                    ) {
+                        Image(
+                            painter = painterResource(id = com.example.astravel.R.drawable.sitemap),
+                            contentDescription = null,
+                            modifier = Modifier
+                                .size(20.dp)
+                        )
+                        Spacer(modifier = Modifier.width(10.dp))
+                        Text("Site Map",
+                            fontFamily = Poppins,
+                            fontSize = 14.sp,
+                            color = Color.White
+                        )
+                    }
+                    Spacer(modifier = Modifier.width(20.dp))
+                    Button(
+                        onClick = {},
+                        modifier = Modifier
+                            .width(140.dp)
+                            .height(50.dp)
+                            .clip(RoundedCornerShape(20.dp)),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5EDFFF))
+                    ) {
+                        Text(
+                            "Start",
+                            fontFamily = Poppins,
+                            fontSize = 16.sp,
+                            color = Color.White
+                        )
+                    }
+
+                }
             }
         }
     }

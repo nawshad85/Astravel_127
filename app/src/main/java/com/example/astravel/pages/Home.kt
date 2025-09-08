@@ -133,118 +133,275 @@ fun Home(
             )
             Spacer(modifier = Modifier.height(25.dp))
             Row(modifier = Modifier.horizontalScroll(rememberScrollState()).imePadding()) {
-                val categories = listOf(
-                    "Forest",
-                    "Beach",
-                    "Mountains",
-                    "Camping",
-                    "Tea Garden",
-                    "Historical Sites"
-                )
-                categories.forEach { cat ->
-                    Button(
-                        onClick = { /* TODO: handle category click */ },
-                        modifier = Modifier.padding(start = 20.dp)
-                    ) { Text(cat) }
-                }
+                Button(onClick = { /* Forest */ }, modifier = Modifier.padding(start = 20.dp)) { Text("Forest") }
+                Button(onClick = { /* Beach */ }, modifier = Modifier.padding(start = 20.dp)) { Text("Beach") }
+                Button(onClick = { /* Mountains */ }, modifier = Modifier.padding(start = 20.dp)) { Text("Mountains") }
+                Button(onClick = { /* Camping */ }, modifier = Modifier.padding(start = 20.dp)) { Text("Camping") }
+                Button(onClick = { /* Tea Garden */ }, modifier = Modifier.padding(start = 20.dp)) { Text("Tea Garden") }
+                Button(onClick = { /* Historical Sites */ }, modifier = Modifier.padding(start = 20.dp, end = 20.dp)) { Text("Historical Sites") }
             }//the category row
             Spacer(modifier = Modifier.height(20.dp))
             Text("Popular Experiences", fontFamily = PoppinsLight, fontSize = 24.sp, color = Color.White, modifier = Modifier.padding(start = 20.dp))
             Row(modifier = Modifier.horizontalScroll(rememberScrollState()).imePadding()){
                 val imageShape = RoundedCornerShape(16.dp)
-                // Pair of (Name, Image URL)
-                val experiences = listOf(
-                    "Kuakata" to "https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/06/29/86d551148963bcf5031d454511d1d5f3_1000x1000.jpg",
-                    "Sajek Valley" to "https://images.pexels.com/photos/15286/pexels-photo.jpg",
-                    "Cox's Bazar" to "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg",
-                    "Saint Martin" to "https://images.pexels.com/photos/998716/pexels-photo-998716.jpeg",
-                    "Bandarban" to "https://images.pexels.com/photos/1287075/pexels-photo-1287075.jpeg",
-                    "Sundarbans" to "https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg"
-                )
-                experiences.forEach { (title, url) ->
+                Box(
+                    modifier = Modifier
+                        .size(200.dp)
+                        .padding(start = 20.dp, top = 20.dp, bottom = 20.dp)
+                        .clip(imageShape)
+                        .background(Color.Gray, shape = imageShape)
+                        .clickable(onClick = {})
+                ) {
+                    AsyncImage(
+                        model = "https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/06/29/86d551148963bcf5031d454511d1d5f3_1000x1000.jpg",
+                        contentDescription = "Kuakata",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
                     Box(
                         modifier = Modifier
-                            .size(200.dp)
-                            .padding(start = 20.dp, top = 20.dp, bottom = 20.dp)
-                            .clip(imageShape)
-                            .background(Color.Gray, shape = imageShape)
-                            .clickable(onClick = {})
+                            .align(androidx.compose.ui.Alignment.BottomStart)
+                            .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
                     ) {
-                        AsyncImage(
-                            model = url,
-                            contentDescription = title,
-                            modifier = Modifier.fillMaxSize(),
-                            contentScale = ContentScale.Crop
-                        )
-                        // Title overlay
-                        Box(
-                            modifier = Modifier
-                                .align(androidx.compose.ui.Alignment.BottomStart)
-                                .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
-                        ) {
-                            Text(
-                                title,
-                                fontFamily = PoppinsLight,
-                                fontSize = 16.sp,
-                                color = Color.White,
-                                modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)
-                            )
-                        }
+                        Text("Kuakata", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp))
                     }
                 }
-            }//the popular experience row
+                Box(
+                    modifier = Modifier
+                        .size(200.dp)
+                        .padding(start = 20.dp, top = 20.dp, bottom = 20.dp)
+                        .clip(imageShape)
+                        .background(Color.Gray, shape = imageShape)
+                        .clickable(onClick = {})
+                ) {
+                    AsyncImage(
+                        model = "https://images.pexels.com/photos/15286/pexels-photo.jpg",
+                        contentDescription = "Sajek Valley",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                    Box(
+                        modifier = Modifier
+                            .align(androidx.compose.ui.Alignment.BottomStart)
+                            .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
+                    ) {
+                        Text("Sajek Valley", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp))
+                    }
+                }
+                Box(
+                    modifier = Modifier
+                        .size(200.dp)
+                        .padding(start = 20.dp, top = 20.dp, bottom = 20.dp)
+                        .clip(imageShape)
+                        .background(Color.Gray, shape = imageShape)
+                        .clickable(onClick = {})
+                ) {
+                    AsyncImage(
+                        model = "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg",
+                        contentDescription = "Cox's Bazar",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                    Box(
+                        modifier = Modifier
+                            .align(androidx.compose.ui.Alignment.BottomStart)
+                            .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
+                    ) {
+                        Text("Cox's Bazar", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp))
+                    }
+                }
+                Box(
+                    modifier = Modifier
+                        .size(200.dp)
+                        .padding(start = 20.dp, top = 20.dp, bottom = 20.dp)
+                        .clip(imageShape)
+                        .background(Color.Gray, shape = imageShape)
+                        .clickable(onClick = {})
+                ) {
+                    AsyncImage(
+                        model = "https://images.pexels.com/photos/998716/pexels-photo-998716.jpeg",
+                        contentDescription = "Saint Martin",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                    Box(
+                        modifier = Modifier
+                            .align(androidx.compose.ui.Alignment.BottomStart)
+                            .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
+                    ) {
+                        Text("Saint Martin", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp))
+                    }
+                }
+                Box(
+                    modifier = Modifier
+                        .size(200.dp)
+                        .padding(start = 20.dp, top = 20.dp, bottom = 20.dp)
+                        .clip(imageShape)
+                        .background(Color.Gray, shape = imageShape)
+                        .clickable(onClick = {navController.navigate("bandarban") })
+                ) {
+                    AsyncImage(
+                        model = "https://images.pexels.com/photos/1287075/pexels-photo-1287075.jpeg",
+                        contentDescription = "Bandarban",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                    Box(
+                        modifier = Modifier
+                            .align(androidx.compose.ui.Alignment.BottomStart)
+                            .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
+                    ) {
+                        Text("Bandarban", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp))
+                    }
+                }
+                Box(
+                    modifier = Modifier
+                        .size(200.dp)
+                        .padding(start = 20.dp, top = 20.dp, bottom = 20.dp, end = 20.dp)
+                        .clip(imageShape)
+                        .background(Color.Gray, shape = imageShape)
+                        .clickable(onClick = {})
+                ) {
+                    AsyncImage(
+                        model = "https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg",
+                        contentDescription = "Sundarbans",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                    Box(
+                        modifier = Modifier
+                            .align(androidx.compose.ui.Alignment.BottomStart)
+                            .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
+                    ) {
+                        Text("Sundarbans", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp))
+                    }
+                }
+            }
             Text("Featured", fontFamily = PoppinsLight, fontSize = 24.sp, color = Color.White, modifier = Modifier.padding(start = 20.dp))
             Column(
                 modifier = Modifier.verticalScroll(rememberScrollState()).imePadding()
             ){
-                // Pair of (Name, Image URL)
-                val experiences = listOf(
-                    "Kuakata" to "https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/06/29/86d551148963bcf5031d454511d1d5f3_1000x1000.jpg",
-                    "Sajek Valley" to "https://images.pexels.com/photos/15286/pexels-photo.jpg",
-                    "Cox's Bazar" to "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg",
-                    "Rangamati Lake" to "https://images.pexels.com/photos/161956/scenic-view-of-lake-and-mountains-161956.jpeg",
-                    "Sundarban" to "https://images.pexels.com/photos/4101551/pexels-photo-4101551.jpeg",
-                    " Ratargul" to "https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg"
-                )
-                experiences.forEach { (title, url) ->
+                Box(
+                    modifier = Modifier
+                        .height(200.dp).fillMaxWidth()
+                        .padding(start = 20.dp, top = 20.dp, bottom = 20.dp, end = 20.dp)
+                        .clip(RoundedCornerShape(16.dp))
+                        .background(Color.Gray, shape = RoundedCornerShape(16.dp))
+                        .clickable(onClick = {})
+                ) {
+                    AsyncImage(
+                        model = "https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/06/29/86d551148963bcf5031d454511d1d5f3_1000x1000.jpg",
+                        contentDescription = "Kuakata",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
                     Box(
                         modifier = Modifier
-                            .height(200.dp).fillMaxWidth()
-                            .padding(start = 20.dp, top = 20.dp, bottom = 20.dp, end = 20.dp)
-                            .clip(RoundedCornerShape(16.dp))
-                            .background(Color.Gray, shape = RoundedCornerShape(16.dp))
-                            .clickable(onClick = {})
-                    ) {
-                        AsyncImage(
-                            model = url,
-                            contentDescription = title,
-                            modifier = Modifier.fillMaxSize(),
-                            contentScale = ContentScale.Crop
-                        )
-                        Box(
-                            modifier = Modifier
-                                .align(androidx.compose.ui.Alignment.BottomStart)
-                                .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
-                        ) {
-                            Text(
-                                title,
-                                fontFamily = PoppinsLight,
-                                fontSize = 16.sp,
-                                color = Color.White,
-                                modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)
-                            )
-                        }
-                    }
+                            .align(androidx.compose.ui.Alignment.BottomStart)
+                            .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
+                    ) { Text("Kuakata", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)) }
+                }
+                Box(
+                    modifier = Modifier
+                        .height(200.dp).fillMaxWidth()
+                        .padding(start = 20.dp, top = 20.dp, bottom = 20.dp, end = 20.dp)
+                        .clip(RoundedCornerShape(16.dp))
+                        .background(Color.Gray, shape = RoundedCornerShape(16.dp))
+                        .clickable(onClick = {})
+                ) {
+                    AsyncImage(
+                        model = "https://images.pexels.com/photos/15286/pexels-photo.jpg",
+                        contentDescription = "Sajek Valley",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                    Box(
+                        modifier = Modifier
+                            .align(androidx.compose.ui.Alignment.BottomStart)
+                            .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
+                    ) { Text("Sajek Valley", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)) }
+                }
+                Box(
+                    modifier = Modifier
+                        .height(200.dp).fillMaxWidth()
+                        .padding(start = 20.dp, top = 20.dp, bottom = 20.dp, end = 20.dp)
+                        .clip(RoundedCornerShape(16.dp))
+                        .background(Color.Gray, shape = RoundedCornerShape(16.dp))
+                        .clickable(onClick = {})
+                ) {
+                    AsyncImage(
+                        model = "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg",
+                        contentDescription = "Cox's Bazar",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                    Box(
+                        modifier = Modifier
+                            .align(androidx.compose.ui.Alignment.BottomStart)
+                            .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
+                    ) { Text("Cox's Bazar", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)) }
+                }
+                Box(
+                    modifier = Modifier
+                        .height(200.dp).fillMaxWidth()
+                        .padding(start = 20.dp, top = 20.dp, bottom = 20.dp, end = 20.dp)
+                        .clip(RoundedCornerShape(16.dp))
+                        .background(Color.Gray, shape = RoundedCornerShape(16.dp))
+                        .clickable(onClick = {})
+                ) {
+                    AsyncImage(
+                        model = "https://images.pexels.com/photos/161956/scenic-view-of-lake-and-mountains-161956.jpeg",
+                        contentDescription = "Rangamati Lake",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                    Box(
+                        modifier = Modifier
+                            .align(androidx.compose.ui.Alignment.BottomStart)
+                            .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
+                    ) { Text("Rangamati Lake", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)) }
+                }
+                Box(
+                    modifier = Modifier
+                        .height(200.dp).fillMaxWidth()
+                        .padding(start = 20.dp, top = 20.dp, bottom = 20.dp, end = 20.dp)
+                        .clip(RoundedCornerShape(16.dp))
+                        .background(Color.Gray, shape = RoundedCornerShape(16.dp))
+                        .clickable(onClick = {})
+                ) {
+                    AsyncImage(
+                        model = "https://images.pexels.com/photos/4101551/pexels-photo-4101551.jpeg",
+                        contentDescription = "Sundarban",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                    Box(
+                        modifier = Modifier
+                            .align(androidx.compose.ui.Alignment.BottomStart)
+                            .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
+                    ) { Text("Sundarban", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)) }
+                }
+                Box(
+                    modifier = Modifier
+                        .height(200.dp).fillMaxWidth()
+                        .padding(start = 20.dp, top = 20.dp, bottom = 40.dp, end = 20.dp)
+                        .clip(RoundedCornerShape(16.dp))
+                        .background(Color.Gray, shape = RoundedCornerShape(16.dp))
+                        .clickable(onClick = {})
+                ) {
+                    AsyncImage(
+                        model = "https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg",
+                        contentDescription = "Ratargul",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                    Box(
+                        modifier = Modifier
+                            .align(androidx.compose.ui.Alignment.BottomStart)
+                            .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
+                    ) { Text("Ratargul", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)) }
                 }
             }
         }
     }
-}
-
-
-@Composable
-fun navigationBar(
-    navController: NavController
-){
-
 }

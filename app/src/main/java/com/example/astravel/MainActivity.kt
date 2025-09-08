@@ -67,7 +67,7 @@ class MainActivity : ComponentActivity() {
 fun NavigationComponent() {
     val navController = rememberNavController()
     val authViewModel: SupabaseAuthViewModel = viewModel()
-    NavHost(navController = navController, startDestination = "welcome") {
+    NavHost(navController = navController, startDestination = "home") {
         composable("welcome") { Welcome(navController, authViewModel) }
         composable("login") { Login(navController, authViewModel) }
         composable("signup") { SignUp(navController, authViewModel) }

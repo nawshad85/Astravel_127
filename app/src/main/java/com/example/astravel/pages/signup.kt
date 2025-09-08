@@ -56,6 +56,7 @@ fun SignUp(
         if (userState is UserState.Success && userState.message == "Sign Up Successful") {
             navController.navigate("profile") {
                 popUpTo("signup") { inclusive = true }
+                launchSingleTop = true
             }
         }
     }

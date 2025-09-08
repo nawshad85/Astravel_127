@@ -70,6 +70,7 @@ fun Login(
         if (userState is UserState.Success && userState.message == "Login Successful") {
             navController.navigate("profile") {
                 popUpTo("login") { inclusive = true }
+                launchSingleTop = true
             }
         }
     }
@@ -198,9 +199,7 @@ fun Login(
             if (userState is UserState.Loading) {
                 Text("Processing...", color = Color.White, fontSize = 14.sp)
             }
-            Button(onClick = {
-                navController.navigate("signup")
-            },
+            Button(onClick = { navController.navigate("signup") },
                 modifier = Modifier
                     .width(320.dp)
                     .height(82.dp)

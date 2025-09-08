@@ -39,6 +39,11 @@ class SupabaseAuthViewModel : ViewModel(){
     var profileMessage by mutableStateOf<String?>(null)
         private set
 
+    var mainStartDestination by mutableStateOf("home")
+        private set
+
+    fun consumeMainStartDestination() { mainStartDestination = "home" }
+
     @Serializable
     data class ProfileData(
         val email: String,
@@ -66,6 +71,7 @@ class SupabaseAuthViewModel : ViewModel(){
                 // refresh and grab email
                 currentEmail = client.auth.currentUserOrNull()?.email
                 saveToken(context)
+                mainStartDestination = "profile"
                 _userState.value = UserState.Success("Sign Up Successful")
             }
             catch (e: Exception){
@@ -100,6 +106,7 @@ class SupabaseAuthViewModel : ViewModel(){
                 }
                 currentEmail = client.auth.currentUserOrNull()?.email
                 saveToken(context)
+                mainStartDestination = "profile"
                 _userState.value = UserState.Success("Login Successful")
             }
             catch (e: Exception){
@@ -123,6 +130,7 @@ class SupabaseAuthViewModel : ViewModel(){
             try {
                 client.auth.signOut()
                 currentEmail = null
+                mainStartDestination = "home"
                 resetProfileFields()
                 sharedPref.clearPreferences()
                 _userState.value = UserState.Success("Logout Successful")

@@ -203,8 +203,8 @@ fun Home(
                     "Sajek Valley" to "https://images.pexels.com/photos/15286/pexels-photo.jpg",
                     "Cox's Bazar" to "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg",
                     "Rangamati Lake" to "https://images.pexels.com/photos/161956/scenic-view-of-lake-and-mountains-161956.jpeg",
-                    "Paharpur" to "https://images.pexels.com/photos/4101551/pexels-photo-4101551.jpeg",
-                    "Lalbagh Fort" to "https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg"
+                    "Sundarban" to "https://images.pexels.com/photos/4101551/pexels-photo-4101551.jpeg",
+                    " Ratargul" to "https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg"
                 )
                 experiences.forEach { (title, url) ->
                     Box(
@@ -239,4 +239,12 @@ fun Home(
             }
         }
     }
+}
+
+
+@Composable
+fun navigationBar(
+    navController: NavController
+){
+
 }

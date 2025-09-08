@@ -29,6 +29,7 @@ import com.example.astravel.pages.Login
 import com.example.astravel.pages.Profile
 import com.example.astravel.pages.SignUp
 import com.example.astravel.pages.Welcome
+import com.example.astravel.places.Bandarban
 import com.example.astravel.ui.theme.AstravelTheme
 
 class MainActivity : ComponentActivity() {
@@ -37,7 +38,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AstravelTheme {
-                NavigationComponent()
+                Bandarban()
             }
         }
     }

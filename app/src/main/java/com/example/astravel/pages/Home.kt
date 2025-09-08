@@ -37,6 +37,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import coil.compose.AsyncImage
+import androidx.compose.ui.draw.clip
 
 @Composable
 fun Home(
@@ -175,18 +176,50 @@ fun Home(
                     Text("Historical Sites")
                 }
 
-            }
+            }//the category row
             Spacer(modifier = Modifier.height(20.dp))
             Text("Popular Experiences", fontFamily = PoppinsLight, fontSize = 24.sp, color = Color.White, modifier = Modifier.padding(start = 20.dp))
-//            AsyncImage(
-//                model = "https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/06/29/86d551148963bcf5031d454511d1d5f3_1000x1000.jpg",
-//                contentDescription = "Sample Image",
-//                modifier = Modifier
-//                    .size(200.dp)
-//                    .offset(x = 180.dp, y = 300.dp)
-//                    .background(Color.Gray, shape = RoundedCornerShape(20.dp)),
-//                contentScale = ContentScale.Crop
-//            )
+            Row(modifier = Modifier.horizontalScroll(rememberScrollState()).imePadding()){
+                val imageShape = RoundedCornerShape(16.dp)
+                // Pair of (Name, Image URL)
+                val experiences = listOf(
+                    "Kuakata" to "https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/06/29/86d551148963bcf5031d454511d1d5f3_1000x1000.jpg",
+                    "Sajek Valley" to "https://images.pexels.com/photos/15286/pexels-photo.jpg",
+                    "Cox's Bazar" to "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg"
+                )
+                experiences.forEach { (title, url) ->
+                    Box(
+                        modifier = Modifier
+                            .size(200.dp)
+                            .padding(start = 20.dp, top = 20.dp, bottom = 20.dp)
+                            .clip(imageShape)
+                            .background(Color.Gray, shape = imageShape)
+                            .clickable(onClick = {})
+                    ) {
+                        AsyncImage(
+                            model = url,
+                            contentDescription = title,
+                            modifier = Modifier.fillMaxSize(),
+                            contentScale = ContentScale.Crop
+                        )
+                        // Title overlay
+                        Box(
+                            modifier = Modifier
+                                .align(androidx.compose.ui.Alignment.BottomStart)
+                                .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
+                        ) {
+                            Text(
+                                title,
+                                fontFamily = PoppinsLight,
+                                fontSize = 16.sp,
+                                color = Color.White,
+                                modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)
+                            )
+                        }
+                    }
+                }
+            }//the popular experience row
+
         }
     }
 }

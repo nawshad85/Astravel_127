@@ -8,7 +8,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Text
@@ -25,7 +24,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalFocusManager
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -71,7 +69,7 @@ fun Home(
     ) {
         Column(
             verticalArrangement = Arrangement.Top,
-//            modifier = Modifier.verticalScroll(rememberScrollState()).imePadding()
+            modifier = Modifier.padding(bottom = 35.dp)
         ){
             Spacer(modifier = Modifier.height(40.dp))
             Row(){
@@ -133,12 +131,12 @@ fun Home(
             )
             Spacer(modifier = Modifier.height(25.dp))
             Row(modifier = Modifier.horizontalScroll(rememberScrollState()).imePadding()) {
-                Button(onClick = { /* Forest */ }, modifier = Modifier.padding(start = 20.dp)) { Text("Forest") }
-                Button(onClick = { /* Beach */ }, modifier = Modifier.padding(start = 20.dp)) { Text("Beach") }
-                Button(onClick = { /* Mountains */ }, modifier = Modifier.padding(start = 20.dp)) { Text("Mountains") }
-                Button(onClick = { /* Camping */ }, modifier = Modifier.padding(start = 20.dp)) { Text("Camping") }
-                Button(onClick = { /* Tea Garden */ }, modifier = Modifier.padding(start = 20.dp)) { Text("Tea Garden") }
-                Button(onClick = { /* Historical Sites */ }, modifier = Modifier.padding(start = 20.dp, end = 20.dp)) { Text("Historical Sites") }
+                Button(onClick = { navController.navigate("forest") }, modifier = Modifier.padding(start = 20.dp)) { Text("Forest") }
+                Button(onClick = { navController.navigate("beach")}, modifier = Modifier.padding(start = 20.dp)) { Text("Beach") }
+                Button(onClick = { navController.navigate("mountain") }, modifier = Modifier.padding(start = 20.dp)) { Text("Mountains") }
+                Button(onClick = { navController.navigate("camping") }, modifier = Modifier.padding(start = 20.dp)) { Text("Camping") }
+                Button(onClick = { navController.navigate("teagarden") }, modifier = Modifier.padding(start = 20.dp)) { Text("Tea Garden") }
+                Button(onClick = { navController.navigate("historical") }, modifier = Modifier.padding(start = 20.dp, end = 20.dp)) { Text("Historical Sites") }
             }//the category row
             Spacer(modifier = Modifier.height(20.dp))
             Text("Popular Experiences", fontFamily = PoppinsLight, fontSize = 24.sp, color = Color.White, modifier = Modifier.padding(start = 20.dp))

@@ -23,6 +23,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.astravel.categories.Beach
+import com.example.astravel.categories.Camping
+import com.example.astravel.categories.Forest
+import com.example.astravel.categories.Historical
+import com.example.astravel.categories.Mountain
+import com.example.astravel.categories.TeaGarden
 import com.example.astravel.pages.Favourites
 import com.example.astravel.pages.Home
 import com.example.astravel.pages.Login
@@ -80,5 +86,12 @@ fun NavigationComponent() {
         composable("sixtydome") { Sixtydome(navController, authViewModel) }
         composable("sreemangal") { Sreemangal(navController, authViewModel) }
         composable("sundarban") { Sundarban(navController, authViewModel) }
+        composable("beach") { Beach(navController, authViewModel) }
+        composable("camping") { Camping(navController, authViewModel) }
+        composable("forest") { Forest(navController, authViewModel) }
+        composable("historical") { Historical(navController, authViewModel) }
+        composable("mountain") { Mountain(navController, authViewModel) }
+        composable("teagarden") { TeaGarden(navController, authViewModel) }
+
     }
 }

@@ -76,7 +76,7 @@ fun Jaflang(
                     .background(Color.Gray, shape = RoundedCornerShape(20.dp))
             ) {
                 AsyncImage(
-                    model = "https://travel.discoverybangladesh.com/images/sylhet-sidebar.jpg",
+                    model = "https://images.mindtrip.ai/attractions/053b/7791/6dcb/8a2b/81e0/8f37/26b5/bb5c",
                     contentDescription = null,
                     modifier = Modifier.fillMaxSize(),
                     contentScale = ContentScale.Crop

@@ -30,7 +30,19 @@ import com.example.astravel.pages.Profile
 import com.example.astravel.pages.SignUp
 import com.example.astravel.pages.Welcome
 import com.example.astravel.places.Bandarban
+import com.example.astravel.places.Coxs
+import com.example.astravel.places.Jaflang
+import com.example.astravel.places.Kuakata
+import com.example.astravel.places.Lalakhal
+import com.example.astravel.places.Mahasthanghargh
+import com.example.astravel.places.Rangamati
+import com.example.astravel.places.Ratargul
+import com.example.astravel.places.Sajek
+import com.example.astravel.places.Sixtydome
+import com.example.astravel.places.Sreemangal
+import com.example.astravel.places.Sundarban
 import com.example.astravel.ui.theme.AstravelTheme
+import kotlin.random.Random
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,5 +69,16 @@ fun NavigationComponent() {
         composable("favourites") { Favourites(navController, authViewModel) }
         composable("profile") { Profile(navController, authViewModel) }
         composable("bandarban") { Bandarban(navController, authViewModel) }
+        composable("coxs") { Coxs(navController, authViewModel) }
+        composable("jaflang") { Jaflang(navController, authViewModel) }
+        composable("kuakata") { Kuakata(navController, authViewModel) }
+        composable("lalakhal") { Lalakhal(navController, authViewModel) }
+        composable("mahasthanghargh") { Mahasthanghargh(navController, authViewModel) }
+        composable("rangamati") { Rangamati(navController, authViewModel) }
+        composable("ratargul") { Ratargul(navController, authViewModel) }
+        composable("sajek") { Sajek(navController, authViewModel) }
+        composable("sixtydome") { Sixtydome(navController, authViewModel) }
+        composable("sreemangal") { Sreemangal(navController, authViewModel) }
+        composable("sundarban") { Sundarban(navController, authViewModel) }
     }
 }

@@ -150,10 +150,10 @@ fun Home(
                         .padding(start = 20.dp, top = 20.dp, bottom = 20.dp)
                         .clip(imageShape)
                         .background(Color.Gray, shape = imageShape)
-                        .clickable(onClick = {})
+                        .clickable(onClick = { navController.navigate("kuakata") })
                 ) {
                     AsyncImage(
-                        model = "https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/06/29/86d551148963bcf5031d454511d1d5f3_1000x1000.jpg",
+                        model = "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/blogWr-i2RxgD9A_AW5c2ZC_YkuR6blqICRf.png",
                         contentDescription = "Kuakata",
                         modifier = Modifier.fillMaxSize(),
                         contentScale = ContentScale.Crop
@@ -172,10 +172,10 @@ fun Home(
                         .padding(start = 20.dp, top = 20.dp, bottom = 20.dp)
                         .clip(imageShape)
                         .background(Color.Gray, shape = imageShape)
-                        .clickable(onClick = {})
+                        .clickable(onClick = { navController.navigate("sajek") })
                 ) {
                     AsyncImage(
-                        model = "https://images.pexels.com/photos/15286/pexels-photo.jpg",
+                        model = "https://huntingworldbeauty.com/wp-content/uploads/2024/12/sajek-valley-0.1-1024x683.jpeg.webp",
                         contentDescription = "Sajek Valley",
                         modifier = Modifier.fillMaxSize(),
                         contentScale = ContentScale.Crop
@@ -194,10 +194,10 @@ fun Home(
                         .padding(start = 20.dp, top = 20.dp, bottom = 20.dp)
                         .clip(imageShape)
                         .background(Color.Gray, shape = imageShape)
-                        .clickable(onClick = {})
+                        .clickable(onClick = { navController.navigate("coxs") })
                 ) {
                     AsyncImage(
-                        model = "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg",
+                        model = "https://i.pinimg.com/736x/b6/2d/23/b62d23f4ac85b860a28326936459fafa.jpg",
                         contentDescription = "Cox's Bazar",
                         modifier = Modifier.fillMaxSize(),
                         contentScale = ContentScale.Crop
@@ -216,11 +216,11 @@ fun Home(
                         .padding(start = 20.dp, top = 20.dp, bottom = 20.dp)
                         .clip(imageShape)
                         .background(Color.Gray, shape = imageShape)
-                        .clickable(onClick = {})
+                        .clickable(onClick = { navController.navigate("lalakhal") })
                 ) {
                     AsyncImage(
-                        model = "https://images.pexels.com/photos/998716/pexels-photo-998716.jpeg",
-                        contentDescription = "Saint Martin",
+                        model = "https://live.staticflickr.com/8614/16191761737_28b57c8a9e_b.jpg",
+                        contentDescription = "Lalakhal",
                         modifier = Modifier.fillMaxSize(),
                         contentScale = ContentScale.Crop
                     )
@@ -229,7 +229,7 @@ fun Home(
                             .align(androidx.compose.ui.Alignment.BottomStart)
                             .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
                     ) {
-                        Text("Saint Martin", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp))
+                        Text("Lalakhal", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp))
                     }
                 }
                 Box(
@@ -241,7 +241,7 @@ fun Home(
                         .clickable(onClick = {navController.navigate("bandarban") })
                 ) {
                     AsyncImage(
-                        model = "https://images.pexels.com/photos/1287075/pexels-photo-1287075.jpeg",
+                        model = "https://cosmosgroup.sgp1.digitaloceanspaces.com/news/y8eC0WBzPEEVyKIGGjcM3zKIgirEYLTLvioF3GaP.jpeg",
                         contentDescription = "Bandarban",
                         modifier = Modifier.fillMaxSize(),
                         contentScale = ContentScale.Crop
@@ -260,10 +260,10 @@ fun Home(
                         .padding(start = 20.dp, top = 20.dp, bottom = 20.dp, end = 20.dp)
                         .clip(imageShape)
                         .background(Color.Gray, shape = imageShape)
-                        .clickable(onClick = {})
+                        .clickable(onClick = { navController.navigate("sundarban") })
                 ) {
                     AsyncImage(
-                        model = "https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg",
+                        model = "https://cosmosgroup.sgp1.digitaloceanspaces.com/news/details/6568412_Sundarban_river_mangrove_forest.jpg",
                         contentDescription = "Sundarbans",
                         modifier = Modifier.fillMaxSize(),
                         contentScale = ContentScale.Crop
@@ -287,11 +287,11 @@ fun Home(
                         .padding(start = 20.dp, top = 20.dp, bottom = 20.dp, end = 20.dp)
                         .clip(RoundedCornerShape(16.dp))
                         .background(Color.Gray, shape = RoundedCornerShape(16.dp))
-                        .clickable(onClick = {})
+                        .clickable(onClick = { navController.navigate("bandarban") })
                 ) {
                     AsyncImage(
-                        model = "https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/06/29/86d551148963bcf5031d454511d1d5f3_1000x1000.jpg",
-                        contentDescription = "Kuakata",
+                        model = "https://cosmosgroup.sgp1.digitaloceanspaces.com/news/y8eC0WBzPEEVyKIGGjcM3zKIgirEYLTLvioF3GaP.jpeg",
+                        contentDescription = "Bandarban",
                         modifier = Modifier.fillMaxSize(),
                         contentScale = ContentScale.Crop
                     )
@@ -299,7 +299,7 @@ fun Home(
                         modifier = Modifier
                             .align(androidx.compose.ui.Alignment.BottomStart)
                             .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
-                    ) { Text("Kuakata", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)) }
+                    ) { Text("Bandarban", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)) }
                 }
                 Box(
                     modifier = Modifier
@@ -307,11 +307,11 @@ fun Home(
                         .padding(start = 20.dp, top = 20.dp, bottom = 20.dp, end = 20.dp)
                         .clip(RoundedCornerShape(16.dp))
                         .background(Color.Gray, shape = RoundedCornerShape(16.dp))
-                        .clickable(onClick = {})
+                        .clickable(onClick = { navController.navigate("lalakhal") })
                 ) {
                     AsyncImage(
-                        model = "https://images.pexels.com/photos/15286/pexels-photo.jpg",
-                        contentDescription = "Sajek Valley",
+                        model = "https://live.staticflickr.com/8614/16191761737_28b57c8a9e_b.jpg",
+                        contentDescription = "Lalakhal",
                         modifier = Modifier.fillMaxSize(),
                         contentScale = ContentScale.Crop
                     )
@@ -319,7 +319,7 @@ fun Home(
                         modifier = Modifier
                             .align(androidx.compose.ui.Alignment.BottomStart)
                             .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
-                    ) { Text("Sajek Valley", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)) }
+                    ) { Text("Lalakhal", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)) }
                 }
                 Box(
                     modifier = Modifier
@@ -327,70 +327,10 @@ fun Home(
                         .padding(start = 20.dp, top = 20.dp, bottom = 20.dp, end = 20.dp)
                         .clip(RoundedCornerShape(16.dp))
                         .background(Color.Gray, shape = RoundedCornerShape(16.dp))
-                        .clickable(onClick = {})
+                        .clickable(onClick = { navController.navigate("ratargul") })
                 ) {
                     AsyncImage(
-                        model = "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg",
-                        contentDescription = "Cox's Bazar",
-                        modifier = Modifier.fillMaxSize(),
-                        contentScale = ContentScale.Crop
-                    )
-                    Box(
-                        modifier = Modifier
-                            .align(androidx.compose.ui.Alignment.BottomStart)
-                            .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
-                    ) { Text("Cox's Bazar", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)) }
-                }
-                Box(
-                    modifier = Modifier
-                        .height(200.dp).fillMaxWidth()
-                        .padding(start = 20.dp, top = 20.dp, bottom = 20.dp, end = 20.dp)
-                        .clip(RoundedCornerShape(16.dp))
-                        .background(Color.Gray, shape = RoundedCornerShape(16.dp))
-                        .clickable(onClick = {})
-                ) {
-                    AsyncImage(
-                        model = "https://images.pexels.com/photos/161956/scenic-view-of-lake-and-mountains-161956.jpeg",
-                        contentDescription = "Rangamati Lake",
-                        modifier = Modifier.fillMaxSize(),
-                        contentScale = ContentScale.Crop
-                    )
-                    Box(
-                        modifier = Modifier
-                            .align(androidx.compose.ui.Alignment.BottomStart)
-                            .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
-                    ) { Text("Rangamati Lake", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)) }
-                }
-                Box(
-                    modifier = Modifier
-                        .height(200.dp).fillMaxWidth()
-                        .padding(start = 20.dp, top = 20.dp, bottom = 20.dp, end = 20.dp)
-                        .clip(RoundedCornerShape(16.dp))
-                        .background(Color.Gray, shape = RoundedCornerShape(16.dp))
-                        .clickable(onClick = {})
-                ) {
-                    AsyncImage(
-                        model = "https://images.pexels.com/photos/4101551/pexels-photo-4101551.jpeg",
-                        contentDescription = "Sundarban",
-                        modifier = Modifier.fillMaxSize(),
-                        contentScale = ContentScale.Crop
-                    )
-                    Box(
-                        modifier = Modifier
-                            .align(androidx.compose.ui.Alignment.BottomStart)
-                            .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
-                    ) { Text("Sundarban", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)) }
-                }
-                Box(
-                    modifier = Modifier
-                        .height(200.dp).fillMaxWidth()
-                        .padding(start = 20.dp, top = 20.dp, bottom = 40.dp, end = 20.dp)
-                        .clip(RoundedCornerShape(16.dp))
-                        .background(Color.Gray, shape = RoundedCornerShape(16.dp))
-                        .clickable(onClick = {})
-                ) {
-                    AsyncImage(
-                        model = "https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg",
+                        model = "https://www.travelandexplorebd.com/storage/app/public/posts/April2020/Ratargul%20Swamp%20Forest,%20Sylhet2.jpg",
                         contentDescription = "Ratargul",
                         modifier = Modifier.fillMaxSize(),
                         contentScale = ContentScale.Crop
@@ -400,6 +340,26 @@ fun Home(
                             .align(androidx.compose.ui.Alignment.BottomStart)
                             .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
                     ) { Text("Ratargul", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)) }
+                }
+                Box(
+                    modifier = Modifier
+                        .height(200.dp).fillMaxWidth()
+                        .padding(start = 20.dp, top = 20.dp, bottom = 20.dp, end = 20.dp)
+                        .clip(RoundedCornerShape(16.dp))
+                        .background(Color.Gray, shape = RoundedCornerShape(16.dp))
+                        .clickable(onClick = { navController.navigate("rangamati") })
+                ) {
+                    AsyncImage(
+                        model = "https://www.thefinancetoday.net/uploads/shares/Rangamati_hanging_Bridge-2019-12-24-12-47-02.jpg",
+                        contentDescription = "Rangamati Lake",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                    Box(
+                        modifier = Modifier
+                            .align(androidx.compose.ui.Alignment.BottomStart)
+                            .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
+                    ) { Text("Rangamati Lake", fontFamily = PoppinsLight, fontSize = 16.sp, color = Color.White, modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)) }
                 }
             }
         }

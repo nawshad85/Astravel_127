@@ -30,8 +30,10 @@ import androidx.navigation.NavHostController
 import com.example.astravel.SupabaseAuthViewModel
 import com.example.astravel.data.model.UserState
 import com.example.astravel.LoadingComponent
-import com.example.learnauth.ui.theme.Poppins
+import com.example.astravel.ui.theme.Poppins
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ExitToApp
 import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Phone
@@ -111,6 +113,13 @@ fun Profile(
                     .padding(top = 4.dp, bottom = 8.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
+                IconButton(onClick = { navController.popBackStack() }) {
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                        contentDescription = "Back",
+                        tint = Color(0xFF5EDFFF)
+                    )
+                }
                 Text(
                     text = "Profile",
                     fontFamily = Poppins,
@@ -121,7 +130,7 @@ fun Profile(
                 )
                 IconButton(onClick = { showLogoutConfirm.value = true }) {
                     Icon(
-                        imageVector = Icons.Default.ExitToApp,
+                        imageVector = Icons.AutoMirrored.Filled.ExitToApp,
                         contentDescription = "Logout",
                         tint = Color(0xFF5EDFFF)
                     )
@@ -145,8 +154,10 @@ fun Profile(
                 )
             }
             Spacer(Modifier.height(14.dp))
+            // Show last name instead of email (fallback to email then No user)
+            val displayName = if (authViewModel.lastName.isNotBlank()) authViewModel.lastName else (email ?: "No user")
             Text(
-                text = email ?: "No user",
+                text = displayName,
                 fontFamily = Poppins,
                 fontSize = 18.sp,
                 color = Color(0xFFB0BEC5)

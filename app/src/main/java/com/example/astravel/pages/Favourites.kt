@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.astravel.SupabaseAuthViewModel
-import com.example.learnauth.ui.theme.Poppins
+import com.example.astravel.ui.theme.Poppins
 
 @Composable
 fun Favourites(

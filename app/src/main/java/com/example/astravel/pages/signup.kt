@@ -2,7 +2,6 @@ package com.example.astravel.pages
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -36,7 +35,7 @@ import androidx.navigation.NavController
 import com.example.astravel.R
 import com.example.astravel.SupabaseAuthViewModel
 import com.example.astravel.data.model.UserState
-import com.example.learnauth.ui.theme.Poppins
+import com.example.astravel.ui.theme.Poppins
 
 @Composable
 fun SignUp(

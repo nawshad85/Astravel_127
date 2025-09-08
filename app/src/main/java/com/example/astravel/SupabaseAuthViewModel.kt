@@ -106,7 +106,7 @@ class SupabaseAuthViewModel : ViewModel(){
                 }
                 currentEmail = client.auth.currentUserOrNull()?.email
                 saveToken(context)
-                mainStartDestination = "profile"
+                mainStartDestination = "home"
                 _userState.value = UserState.Success("Login Successful")
             }
             catch (e: Exception){

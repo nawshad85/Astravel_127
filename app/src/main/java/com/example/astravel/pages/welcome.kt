@@ -29,11 +29,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.example.astravel.LoadingComponent
 import com.example.astravel.R
 import com.example.astravel.SupabaseAuthViewModel
 import com.example.astravel.data.model.UserState
-import com.example.learnauth.ui.theme.Poppins
+import com.example.astravel.ui.theme.Poppins
 import androidx.compose.ui.platform.LocalContext
 
 

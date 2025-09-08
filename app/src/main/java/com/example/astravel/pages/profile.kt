@@ -37,6 +37,7 @@ import androidx.compose.material.icons.automirrored.filled.ExitToApp
 import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Phone
+import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.TextFieldDefaults
@@ -197,7 +198,45 @@ fun Profile(
                     )
                     ProfileRow(label = "Email", value = email ?: "-")
                     Spacer(Modifier.height(8.dp))
-                    ProfileRow(label = "Status", value = if (email != null) "Active" else "Guest")
+                    // Replaced generic ProfileRow for Status with custom row including icon when active
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = "Status",
+                            fontFamily = Poppins,
+                            fontSize = 16.sp,
+                            color = Color(0xFFB0BEC5)
+                        )
+                        if (email != null) {
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Icon(
+                                    imageVector = Icons.Filled.CheckCircle,
+                                    contentDescription = "Active",
+                                    tint = Color(0xFF4CAF50),
+                                    modifier = Modifier.size(18.dp)
+                                )
+                                Spacer(Modifier.width(6.dp))
+                                Text(
+                                    text = "Active",
+                                    fontFamily = Poppins,
+                                    fontSize = 16.sp,
+                                    fontWeight = FontWeight.Medium,
+                                    color = Color.White
+                                )
+                            }
+                        } else {
+                            Text(
+                                text = "Guest",
+                                fontFamily = Poppins,
+                                fontSize = 16.sp,
+                                fontWeight = FontWeight.Medium,
+                                color = Color.White
+                            )
+                        }
+                    }
                     Spacer(Modifier.height(20.dp))
                     Text(
                         text = "Edit Profile",

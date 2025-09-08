@@ -71,7 +71,7 @@ fun Home(
     ) {
         Column(
             verticalArrangement = Arrangement.Top,
-            modifier = Modifier.verticalScroll(rememberScrollState()).imePadding()
+//            modifier = Modifier.verticalScroll(rememberScrollState()).imePadding()
         ){
             Spacer(modifier = Modifier.height(40.dp))
             Row(){
@@ -133,49 +133,20 @@ fun Home(
             )
             Spacer(modifier = Modifier.height(25.dp))
             Row(modifier = Modifier.horizontalScroll(rememberScrollState()).imePadding()) {
-                Button(
-                    onClick = {},
-                    modifier = Modifier
-                        .padding(start = 20.dp)
-                ) {
-                    Text("Forest")
+                val categories = listOf(
+                    "Forest",
+                    "Beach",
+                    "Mountains",
+                    "Camping",
+                    "Tea Garden",
+                    "Historical Sites"
+                )
+                categories.forEach { cat ->
+                    Button(
+                        onClick = { /* TODO: handle category click */ },
+                        modifier = Modifier.padding(start = 20.dp)
+                    ) { Text(cat) }
                 }
-                Button(
-                    onClick = {},
-                    modifier = Modifier
-                        .padding(start = 20.dp)
-                ) {
-                    Text("Beach")
-                }
-                Button(
-                    onClick = {},
-                    modifier = Modifier
-                        .padding(start = 20.dp)
-                ) {
-                    Text("Mountains")
-                }
-                Button(
-                    onClick = {},
-                    modifier = Modifier
-                        .padding(start = 20.dp)
-                ) {
-                    Text("Camping")
-                }
-                Button(
-                    onClick = {},
-                    modifier = Modifier
-                        .padding(start = 20.dp)
-                ) {
-                    Text("Tea Garden")
-                }
-                Button(
-                    onClick = {},
-                    modifier = Modifier
-                        .padding(start = 20.dp)
-                ) {
-                    Text("Historical Sites")
-                }
-
             }//the category row
             Spacer(modifier = Modifier.height(20.dp))
             Text("Popular Experiences", fontFamily = PoppinsLight, fontSize = 24.sp, color = Color.White, modifier = Modifier.padding(start = 20.dp))
@@ -185,7 +156,10 @@ fun Home(
                 val experiences = listOf(
                     "Kuakata" to "https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/06/29/86d551148963bcf5031d454511d1d5f3_1000x1000.jpg",
                     "Sajek Valley" to "https://images.pexels.com/photos/15286/pexels-photo.jpg",
-                    "Cox's Bazar" to "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg"
+                    "Cox's Bazar" to "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg",
+                    "Saint Martin" to "https://images.pexels.com/photos/998716/pexels-photo-998716.jpeg",
+                    "Bandarban" to "https://images.pexels.com/photos/1287075/pexels-photo-1287075.jpeg",
+                    "Sundarbans" to "https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg"
                 )
                 experiences.forEach { (title, url) ->
                     Box(
@@ -219,7 +193,50 @@ fun Home(
                     }
                 }
             }//the popular experience row
-
+            Text("Featured", fontFamily = PoppinsLight, fontSize = 24.sp, color = Color.White, modifier = Modifier.padding(start = 20.dp))
+            Column(
+                modifier = Modifier.verticalScroll(rememberScrollState()).imePadding()
+            ){
+                // Pair of (Name, Image URL)
+                val experiences = listOf(
+                    "Kuakata" to "https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/06/29/86d551148963bcf5031d454511d1d5f3_1000x1000.jpg",
+                    "Sajek Valley" to "https://images.pexels.com/photos/15286/pexels-photo.jpg",
+                    "Cox's Bazar" to "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg",
+                    "Rangamati Lake" to "https://images.pexels.com/photos/161956/scenic-view-of-lake-and-mountains-161956.jpeg",
+                    "Paharpur" to "https://images.pexels.com/photos/4101551/pexels-photo-4101551.jpeg",
+                    "Lalbagh Fort" to "https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg"
+                )
+                experiences.forEach { (title, url) ->
+                    Box(
+                        modifier = Modifier
+                            .height(200.dp).fillMaxWidth()
+                            .padding(start = 20.dp, top = 20.dp, bottom = 20.dp, end = 20.dp)
+                            .clip(RoundedCornerShape(16.dp))
+                            .background(Color.Gray, shape = RoundedCornerShape(16.dp))
+                            .clickable(onClick = {})
+                    ) {
+                        AsyncImage(
+                            model = url,
+                            contentDescription = title,
+                            modifier = Modifier.fillMaxSize(),
+                            contentScale = ContentScale.Crop
+                        )
+                        Box(
+                            modifier = Modifier
+                                .align(androidx.compose.ui.Alignment.BottomStart)
+                                .background(Color(0x80000000), shape = RoundedCornerShape(topEnd = 12.dp))
+                        ) {
+                            Text(
+                                title,
+                                fontFamily = PoppinsLight,
+                                fontSize = 16.sp,
+                                color = Color.White,
+                                modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)
+                            )
+                        }
+                    }
+                }
+            }
         }
     }
 }

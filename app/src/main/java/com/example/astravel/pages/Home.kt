@@ -114,7 +114,7 @@ fun Home(
                         shape = CircleShape
                     )
                     .align(Alignment.Bottom)
-                    .clickable {}
+                    .clickable { navController.navigate("favourites") }
                 ){
                     Icon(
                         Icons.Filled.FavoriteBorder,

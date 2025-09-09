@@ -4,24 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material3.Icon
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavDestination.Companion.hierarchy
-import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.astravel.categories.Beach
 import com.example.astravel.categories.Camping
@@ -29,7 +15,6 @@ import com.example.astravel.categories.Forest
 import com.example.astravel.categories.Historical
 import com.example.astravel.categories.Mountain
 import com.example.astravel.categories.TeaGarden
-import com.example.astravel.pages.Favourites
 import com.example.astravel.pages.Home
 import com.example.astravel.pages.Login
 import com.example.astravel.pages.Profile
@@ -47,8 +32,8 @@ import com.example.astravel.places.Sajek
 import com.example.astravel.places.Sixtydome
 import com.example.astravel.places.Sreemangal
 import com.example.astravel.places.Sundarban
+import com.example.astravel.pages.Favourites
 import com.example.astravel.ui.theme.AstravelTheme
-import kotlin.random.Random
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,7 +52,7 @@ class MainActivity : ComponentActivity() {
 fun NavigationComponent() {
     val navController = rememberNavController()
     val authViewModel: SupabaseAuthViewModel = viewModel()
-    NavHost(navController = navController, startDestination = "home") {
+    NavHost(navController = navController, startDestination = "welcome") {
         composable("welcome") { Welcome(navController, authViewModel) }
         composable("login") { Login(navController, authViewModel) }
         composable("signup") { SignUp(navController, authViewModel) }
@@ -92,6 +77,5 @@ fun NavigationComponent() {
         composable("historical") { Historical(navController, authViewModel) }
         composable("mountain") { Mountain(navController, authViewModel) }
         composable("teagarden") { TeaGarden(navController, authViewModel) }
-
     }
 }

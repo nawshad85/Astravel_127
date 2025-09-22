@@ -34,7 +34,6 @@ import com.example.astravel.ui.theme.Poppins
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.ExitToApp
-import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.CheckCircle
@@ -86,7 +85,7 @@ fun Profile(
         }
     }
 
-    var showLogoutConfirm = remember { mutableStateOf(false) }
+    val showLogoutConfirm = remember { mutableStateOf(false) }
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -348,6 +347,26 @@ fun Profile(
                 }
             }
             Spacer(Modifier.height(32.dp))
+
+            // About App button
+            Button(
+                onClick = { navController.navigate("about") },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp),
+                shape = RoundedCornerShape(12.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = accent
+                )
+            ) {
+                Text(
+                    text = "About App",
+                    fontFamily = Poppins,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color(0xFF012632)
+                )
+            }
 
             // Remove bottom Logout button section
             if (userState is UserState.Error) {

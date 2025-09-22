@@ -15,6 +15,7 @@ import com.example.astravel.categories.Forest
 import com.example.astravel.categories.Historical
 import com.example.astravel.categories.Mountain
 import com.example.astravel.categories.TeaGarden
+import com.example.astravel.pages.About
 import com.example.astravel.pages.Home
 import com.example.astravel.pages.Login
 import com.example.astravel.pages.Profile
@@ -77,5 +78,6 @@ fun NavigationComponent() {
         composable("historical") { Historical(navController, authViewModel) }
         composable("mountain") { Mountain(navController, authViewModel) }
         composable("teagarden") { TeaGarden(navController, authViewModel) }
+        composable("about") { About(navController, authViewModel) }
     }
 }
